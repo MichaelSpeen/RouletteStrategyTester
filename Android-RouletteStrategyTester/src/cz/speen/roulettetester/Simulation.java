@@ -122,18 +122,18 @@ public class Simulation extends Activity implements Runnable {
         
         TextView t = new TextView(this); 
         t.setText(barva);
-        t.setShadowLayer(2, 2, 2, 0x773e7f42);
+        t.setShadowLayer(1, 1, 1, 0x773e7f42);
         if(barva.equals("cervena")){
-        	t.setText("●r");
+        	t.setText("■");
             t.setTextColor(0xff880000);
-            t.setShadowLayer(2, -2, -2, 0x773e7f42);
+            //t.setShadowLayer(1, -1, -1, 0xff013502);
         }else
             if(barva.equals("cerna")){
-            	t.setText("●b");
+            	t.setText("■");
                 t.setTextColor(0xff000000);
             }else
                 if(barva.equals("nula")){
-                	t.setText("●z");
+                	t.setText("■");
                     t.setTextColor(0xff013502);
                 }
         TextView t1 = new TextView(this); 

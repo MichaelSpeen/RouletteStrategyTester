@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.TextView;
 
 public class SimulationSettings extends Activity {
@@ -14,7 +15,7 @@ public class SimulationSettings extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
-
+	    this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 	    setContentView(R.layout.simulation_settings);
 	    
 	    
@@ -22,10 +23,10 @@ public class SimulationSettings extends Activity {
 	    Intent intent = getIntent();
 	    String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 	    
-	    TextView vybrana_ruleta = (TextView) findViewById(R.id.textView1);
+	    TextView vybrana_ruleta = (TextView) findViewById(R.id.roulettename);
 	    vybrana_ruleta.setText(rs.getVybranaRuleta().nazev);
 	    
-	    TextView vybrana_strategie = (TextView) findViewById(R.id.textView2);
+	    TextView vybrana_strategie = (TextView) findViewById(R.id.strategyname);
 	    //vybrana_strategie.setText(rs.getVybranaRuleta().nazev);
 	    
 	}

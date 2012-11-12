@@ -2,108 +2,149 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="5px"
-    android:background="@drawable/zeleny_bg" >
+    android:orientation="vertical"
+    android:padding="0px"
+    android:background="@drawable/novyvzhled">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="Roulette" />
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/vybratRuletu"
-        android:text="Strategy" />
-    
-    
-    
-
-    <Button
-        android:id="@+id/vybratRuletu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView3"
-        android:text="Set"
-        android:onClick="vybratRuletu" />
-
-    <Button
-        android:id="@+id/vybratStrategii"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView4"
-        android:text="Button" />
-    
-    
-    
-    
-
-    <TextView
-        android:id="@+id/textView2"
+    <LinearLayout
+        android:id="@+id/relativeLayout1"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/vybratStrategii"
-        android:layout_alignBottom="@+id/vybratStrategii"
-        android:layout_alignParentLeft="true"
-        android:text="Martingale"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-    <TextView
-        android:id="@+id/textView1"
+        android:layout_height="55px"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+	        <Button
+	            android:id="@+id/button2"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentBottom="true"
+	            android:layout_centerHorizontal="true"
+	            android:text="Test this strategy"
+        		android:onClick="zacitHrat" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout5"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/vybratRuletu"
-        android:layout_alignBottom="@+id/vybratRuletu"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/relativeLayout1"
         android:layout_alignParentLeft="true"
-        android:text="Default Roulette"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-    
-    
-    
-    
-    
+        android:layout_alignParentTop="true" >
 
-    <ScrollView
-        android:id="@+id/scrollView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/startTest"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/vybratStrategii" >
+	    <ImageView
+	        android:id="@+id/imageView1"
+	        android:layout_width="40dp"
+	        android:layout_height="40dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginLeft="15dp"
+	        android:layout_marginTop="15dp"
+	        android:src="@drawable/logo" />
+	
+	    <Button
+	        android:id="@+id/button1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="40dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignTop="@+id/imageView1"
+	        android:layout_marginRight="15dp"
+	        android:text="Recent results" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+	     <TextView
+	         android:id="@+id/textView1"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_alignLeft="@+id/imageView1"
+	         android:layout_below="@+id/imageView1"
+	         android:layout_marginTop="15dp"
+	         android:text="Roulette" />
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#ffe827"
-                android:text="The Roulette Martingale Strategy appeared in 18th century France and was created for a game in which the gambler wins if a coin comes up heads and loses if the coin comes up tailes. With the Martingale Roulette Strategy if a roulette player has a lot of money and can afford to bet them, theoretically he cannot lose. With the Martingale Roulette Strategy a player has to double his bet after every loss till the first win that will recover all his previous losses plus profit that is equal to the initial bet.\n
+	     <TextView
+	         android:id="@+id/roulettename"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_alignLeft="@+id/textView1"
+	         android:layout_below="@+id/textView1"
+	         android:layout_marginLeft="20dp"
+	         android:text="Default Roulette"
+	         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	     <TextView
+	         android:id="@+id/textView2"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_alignLeft="@+id/textView1"
+	         android:layout_below="@+id/roulettename"
+	         android:layout_marginTop="5dp"
+	         android:text="Strategy" />
+
+	     <TextView
+	         android:id="@+id/strategyname"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_alignLeft="@+id/textView1"
+	         android:layout_below="@+id/textView2"
+	         android:layout_marginLeft="20dp"
+	         android:text="Martingale"
+	         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+	     <Button
+	         android:id="@+id/vybratRuletu"
+	         android:layout_height="40dp"
+	         android:layout_width="wrap_content"
+	         android:layout_alignRight="@+id/button1"
+	         android:layout_alignTop="@+id/textView1"
+        	 android:onClick="vybratRuletu"
+	         android:text="Set" />
+
+	     <Button
+	         android:id="@+id/button4"
+	         android:layout_width="wrap_content"
+	         android:layout_height="40dp"
+	         android:layout_alignRight="@+id/vybratRuletu"
+	         android:layout_alignTop="@+id/textView2"
+	         android:text="Set" />
+
+	     <TextView
+	         android:id="@+id/stratygydescription"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_alignLeft="@+id/textView2"
+	         android:layout_below="@+id/button4"
+	         android:layout_marginTop="45dp"
+	         android:text="Strategy description" />
+
+	     <ScrollView
+	         android:id="@+id/scrollView1"
+	         android:layout_width="fill_parent"
+	         android:layout_height="fill_parent"
+	         android:layout_alignLeft="@+id/stratygydescription"
+	         android:layout_below="@+id/stratygydescription"
+	         android:layout_marginRight="15dp" >
+
+	         <LinearLayout
+	             android:id="@+id/linearLayout1"
+	             android:layout_width="fill_parent"
+	             android:layout_height="fill_parent" >
+			     <TextView
+			         android:id="@+id/stratygydescription"
+			         android:textColor="#FFFFFFFF"
+			         android:layout_width="wrap_content"
+			         android:layout_height="wrap_content"
+			         android:text="The Roulette Martingale Strategy appeared in 18th century France and was created for a game in which the gambler wins if a coin comes up heads and loses if the coin comes up tailes. With the Martingale Roulette Strategy if a roulette player has a lot of money and can afford to bet them, theoretically he cannot lose. With the Martingale Roulette Strategy a player has to double his bet after every loss till the first win that will recover all his previous losses plus profit that is equal to the initial bet.\n
 								As with every other betting system when the roulette player has bad luck and a straight string of losses happens to him, this may result in a loss of money. However, in most of the cases the Martingale Roulette Strategy is quite effective and the players may win a lot with it. It is considered that the minimum and the maximum bet limits that the land-based casinos impose are because they want to limit the usage of the Martingale Roulette Strategy and to make it harder to carry it out.\n
 								Let’s say you bet $1 on a colour at your choice (black or red) and if your colour comes out then you will have $1 profit (odds of winning - 1:1). After that, you place a bet of $1 again on the same colour and if you win again, you will continue to bet $1 on one and the same colour until you lose or you decide to stop playing. In case you lose your bet of $1, then your next bet will be double - $2. Let’s say that you lose again, then you need to double the lost bet of $2 and bet $4 on the chosen colour. If you lose one more time, then you double the previous bet of $4 and this time bet $8 on the same colour. Continue to bet like this till the moment when your colour comes out. When this happens you will have everything lost back plus profit of your initial bet (in this case $1). Let’s say that your colour comes out after your bet of $8, then you will win $16 and you will have everything lost back plus profit of $1. The intial bet may be an amount of your choice, but it is not recommended to be more than $5." />
-        </LinearLayout>
-    </ScrollView>
-    
-    
+	         </LinearLayout>
+	     </ScrollView>
 
-    <Button
-        android:id="@+id/startTest"
-        android:layout_width="200px"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Test this strategy"
-        android:onClick="zacitHrat" />
-    
-    
+    </RelativeLayout>
 
 </RelativeLayout>
