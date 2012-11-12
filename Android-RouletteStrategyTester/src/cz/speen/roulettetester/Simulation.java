@@ -88,9 +88,9 @@ public class Simulation extends Activity implements Runnable {
 				Message msg = new Message();
 				msg.obj = getBarva(nove_cislo)+";"+nove_cislo+";"+"";
 				mHandler.sendMessage(msg);
-				msg.obj = stav_hrani;
-				mHandler.sendMessage(msg);
-				stav_hrani = " ; ; ";
+				//msg.obj = stav_hrani;
+				//mHandler.sendMessage(msg);
+				//stav_hrani = " ; ; ";
 				Log.i("Simulation/run()", nove_cislo+"");
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
