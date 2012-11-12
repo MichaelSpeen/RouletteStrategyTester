@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -37,7 +38,7 @@ public class Simulation extends Activity implements Runnable {
 	private Thread myThread;
 	
 	public static double penizky = 0;
-	public static String stav_hrani = " ; ; ";
+	public static String stav_hrani = " ";
 	
 	int counter = 0;
 	
@@ -78,19 +79,16 @@ public class Simulation extends Activity implements Runnable {
 		while (hrajese){
 
 			try {
-				//padne ãíslo
+				//padne ƒç√≠slo
 				int nove_cislo = getCislo(ruleta.pocet_nul);
 				
 				//zahraje se
 				l = ss.getVybranaStrategie().hrat(l,nove_cislo,this);
 				
-				//obnov a doplÀ texty 
+				//obnov a dopl≈à texty 
 				Message msg = new Message();
 				msg.obj = getBarva(nove_cislo)+";"+nove_cislo+";"+"";
 				mHandler.sendMessage(msg);
-				//msg.obj = stav_hrani;
-				//mHandler.sendMessage(msg);
-				//stav_hrani = " ; ; ";
 				Log.i("Simulation/run()", nove_cislo+"");
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
@@ -110,7 +108,7 @@ public class Simulation extends Activity implements Runnable {
 				cislo = (int) (Math.random() * 36);
 			} else
 				if(pocet_nul >= 2){
-					//ruleta se dvûma nulama <0,36>  (37 je ta druha nula)
+					//ruleta se dvƒõma nulama <0,36>  (37 je ta druha nula)
 					cislo = (int) (Math.random() * 37);
 					if(cislo == 37) cislo = 0;
 				}
@@ -124,12 +122,29 @@ public class Simulation extends Activity implements Runnable {
         
         TextView t = new TextView(this); 
         t.setText(barva);
-        //t.setLayoutParams(lp);
+        t.setShadowLayer(2, 2, 2, 0x773e7f42);
+        if(barva.equals("cervena")){
+        	t.setText("‚óèr");
+            t.setTextColor(0xff880000);
+            t.setShadowLayer(2, -2, -2, 0x773e7f42);
+        }else
+            if(barva.equals("cerna")){
+            	t.setText("‚óèb");
+                t.setTextColor(0xff000000);
+            }else
+                if(barva.equals("nula")){
+                	t.setText("‚óèz");
+                    t.setTextColor(0xff013502);
+                }
         TextView t1 = new TextView(this); 
         t1.setText(cislo);
-        //t1.setLayoutParams(lp);
+        t1.setTextColor(Color.WHITE);
         TextView t2 = new TextView(this); 
         t2.setText(poznamka);
+        t2.setTextColor(0xff013502);
+        t2.setShadowLayer(1, 1, 1, 0x773e7f42);
+        //t2.setTextColor(Color.g);
+        
         //t2.setLayoutParams(lp);
         row.addView(t);
         row.addView(t1);
@@ -168,15 +183,15 @@ public class Simulation extends Activity implements Runnable {
         @Override
         public void handleMessage(Message msg) {
         	
-        	//obnov penízky
+        	//obnov pen√≠zky
         	int i = (int) (penizky*100);
 	        tv_penizky.setText(""+((double) i/100));
 	        
-	        //obnov ãas
+	        //obnov ƒças
 	        	// TODO
         	
         	
-        	//doplÀ tabulku
+        	//dopl≈à tabulku
             String text = (String)msg.obj;
             StringTokenizer st = new StringTokenizer(text, ";");
             
@@ -189,8 +204,10 @@ public class Simulation extends Activity implements Runnable {
             	cislo = st.nextToken();
             if(st.hasMoreTokens())
             	poznamka = st.nextToken();
-            
+
 			pridatStav(barva, " "+cislo+" ", poznamka);
+			pridatStav(" ", " ", stav_hrani);
+			stav_hrani = " ";
 			scroll_view.fullScroll(ScrollView.FOCUS_DOWN);
         }
         

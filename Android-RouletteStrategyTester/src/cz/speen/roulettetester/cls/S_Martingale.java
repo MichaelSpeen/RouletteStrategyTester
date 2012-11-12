@@ -35,19 +35,19 @@ public class S_Martingale extends Strategy {
 			l.add(rs.getVybranaRuleta().min_sazka+"");
 			if(getBarva(cislo).equals("cervena")) l.add("cerna"); else l.add("cervena");
 			sim.penizky -= rs.getVybranaRuleta().min_sazka;
-			sim.stav_hrani = " ; ;Bet "+rs.getVybranaRuleta().min_sazka;
+			sim.stav_hrani = "Bet "+rs.getVybranaRuleta().min_sazka;
 		}else{
 			String barva = getBarva(cislo);
 			if(barva.equals(l.get(1))){
 				//vyhr‡l! :)			-- nastavit opa‹nou barvu a nastavit minim‡ln’ s‡zku
-				sim.stav_hrani = " ; ;Won "+Double.parseDouble(l.get(0))*2;
+				RouletteService rs = new RouletteService();
+				sim.stav_hrani = "Won "+Double.parseDouble(l.get(0))*2+"\nBet "+rs.getVybranaRuleta().min_sazka;
 				sim.penizky += Double.parseDouble(l.get(0))*2;
 				if(l.get(1).equals("cervena")) l.set(1,"cerna"); else l.set(1,"cervena");
-				RouletteService rs = new RouletteService();
 				l.set(0, rs.getVybranaRuleta().min_sazka+"");
 			}else{
 				//prohr‡l >:(			-- zdvojn‡sobit s‡zku a barvu nechat
-				sim.stav_hrani = " ; ;Bet "+Double.parseDouble(l.get(0))*2;
+				sim.stav_hrani = "Bet "+Double.parseDouble(l.get(0))*2;
 				Double sazka = Double.parseDouble(l.get(0));
 				sazka = sazka*2;
 				l.set(0, sazka+"");
