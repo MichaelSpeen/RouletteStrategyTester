@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="0px"
+    android:background="@drawable/novyvzhled">
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="21dp" />
+
+    <LinearLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="55px"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="10">
+
+	        <Button
+	            android:id="@+id/button3"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentBottom="true"
+	            android:layout_centerHorizontal="true"
+	            android:onClick="startThread"
+	            android:text="Start" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="10" >
+
+	        <Button
+	            android:id="@+id/button2"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentBottom="true"
+	            android:layout_centerHorizontal="true"
+	            android:onClick="stopThread"
+	            android:text="Stop" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+	            android:layout_marginTop="90dp"
+        android:layout_above="@+id/relativeLayout1"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/progressBar1" >
+
+        
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="10"
+            android:padding="5px">
+
+            <ScrollView
+                android:id="@+id/scrollView1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="20px" >
+
+                    
+		            <TableLayout
+		                android:id="@+id/tabulkaLog"
+		                android:layout_width="fill_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentTop="true"
+		                android:layout_centerHorizontal="true" 
+		                android:stretchColumns="3" >
+		            </TableLayout>
+                    
+                    <!-- <TextView
+                        android:id="@+id/log"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in mauris libero. Fusce non leo velit. Maecenas pulvinar condimentum auctor. Nullam et neque in turpis aliquam pharetra sed at magna. Aenean quis rhoncus urna. Nam eget venenatis lorem. Quisque vehicula gravida convallis. Mauris vitae mauris libero. Vestibulum lorem mi, molestie eu tristique eu, blandit at tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam blandit magna in erat iaculis ut iaculis enim varius. Nullam a arcu sed metus elementum dapibus. Nam lacus velit, ornare quis luctus hendrerit, cursus porttitor mi. Quisque auctor posuere facilisis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;Suspendisse feugiat elit nec mauris rutrum id rutrum mauris congue. Nam ac felis eu lacus gravida porta. Sed augue velit, interdum quis mattis at, interdum at justo. Integer a risus tortor, in laoreet magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce eu nulla nibh. Sed laoreet metus eu justo dictum sed placerat sem tempus." />
+-->
+                </LinearLayout>
+            </ScrollView>
+	        
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="10" 
+            android:padding="5px">
+
+	        <TextView
+	            android:id="@+id/textView2"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentLeft="true"
+	            android:layout_alignParentTop="true"
+	            android:text="Strategy"
+	            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+	        <TextView
+	            android:id="@+id/nazevStrategie"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@+id/textView2"
+	            android:layout_centerHorizontal="true"
+	            android:text="Martingale"
+	            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	        <TextView
+	            android:id="@+id/textView4"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentLeft="true"
+	            android:layout_below="@+id/nazevStrategie"
+	            android:layout_marginTop="23dp"
+	            android:text="Simulated time" />
+	        <TextView
+	            android:id="@+id/cas"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerHorizontal="true"
+	            android:layout_below="@+id/textView4"
+	            android:text="00:04:59"
+	            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	        <TextView
+	            android:id="@+id/textView6"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentLeft="true"
+	            android:layout_below="@+id/cas"
+	            android:layout_marginTop="23dp"
+	            android:text="Curent Balance" />
+	        <TextView
+	            android:id="@+id/penizky"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerHorizontal="true"
+	            android:layout_below="@+id/textView6"
+	            android:text="+ $22"
+	            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </RelativeLayout>
+        
+    </LinearLayout>
+
+</RelativeLayout>

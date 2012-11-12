@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    
+    <string name="app_name">Roulette Strategy Tester</string>
+
+    <!--  Aktivita main -->
+    <string name="hello">touch to continue</string>
+    
+    <!--  Aktivita rolettechooser -->
+    <string name="menu_cancel">Cancel</string>
+    <string name="menu_done">Done</string>
+
+</resources>
