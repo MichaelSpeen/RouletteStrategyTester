@@ -2,13 +2,13 @@ package cz.speen.roulettetester.adps;
 
 public class SimulationLog {
 	
-	public String a,b,c;
+	public String barva,cislo,poznamka;
 
-	public SimulationLog(String a, String b, String c) {
+	public SimulationLog(String barva, String cislo, String poznamka) {
 		super();
-		this.a = a;
-		this.b = b;
-		this.c = c;
+		this.barva = barva;
+		this.cislo = cislo;
+		this.poznamka = poznamka;
 	} 
 
 }

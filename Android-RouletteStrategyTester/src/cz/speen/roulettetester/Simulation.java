@@ -31,14 +31,15 @@ public class Simulation extends Activity implements Runnable {
 
 	private TextView tv_log, tv_nazev_strategie, tv_cas, tv_penizky;
 	private ListView tabulka_log;
-	private ScrollView scroll_view;
+	//private ScrollView scroll_view;
 	private boolean pauza = false;
 	private boolean hrajese = false;
 	
 	private Strategy strategie;
 	private Roulette ruleta;
 	private Thread myThread;
-	
+
+    private ArrayList<SimulationLog> sl = new ArrayList<SimulationLog>();
 	public static double penizky = 0;
 	public static String stav_hrani = " ";
 	
@@ -60,12 +61,17 @@ public class Simulation extends Activity implements Runnable {
         tv_penizky = (TextView) findViewById(R.id.penizky);
         tv_nazev_strategie = (TextView) findViewById(R.id.nazevStrategie);
         tabulka_log = (ListView) findViewById(R.id.loglist);
-        scroll_view = (ScrollView) findViewById(R.id.scrollView1);
+      //  scroll_view = (ScrollView) findViewById(R.id.scrollView1);
         
         tv_nazev_strategie.setText(strategie.nazev);
         tv_cas.setText("00:00:00");
         tv_penizky.setText(""+penizky);
-        tabulka_log.setAdapter(new SimulationLogAdapter(new ArrayList<SimulationLog>(), this));
+        sl.add(new SimulationLog("cervena", "12", "pozn"));
+		sl.add(new SimulationLog("cervena", "12", "pozn"));
+		sl.add(new SimulationLog("cervena", "12", "pozn"));
+		sl.add(new SimulationLog("cervena", "12", "pozn"));
+		sl.add(new SimulationLog("cervena", "12", "pozn"));
+        tabulka_log.setAdapter(new SimulationLogAdapter(sl, this));
 	}
 
 	@Override
@@ -154,7 +160,7 @@ public class Simulation extends Activity implements Runnable {
         row.addView(t2);
            
         // add the TableRow to the TableLayout
-        tabulka_log.addView(row,new TableLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+     //   tabulka_log.addView(row,new TableLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
  
 	}
 	
@@ -208,10 +214,12 @@ public class Simulation extends Activity implements Runnable {
             if(st.hasMoreTokens())
             	poznamka = st.nextToken();
 
-			pridatStav(barva, " "+cislo+" ", poznamka);
-			pridatStav(" ", " ", stav_hrani);
+			sl.add(new SimulationLog(barva, cislo, poznamka));
+           // pridatStav(barva, " "+cislo+" ", poznamka);
+		//	pridatStav(" ", " ", stav_hrani);
 			stav_hrani = " ";
-			scroll_view.fullScroll(ScrollView.FOCUS_DOWN);
+			//scroll_view.fullScroll(ScrollView.FOCUS_DOWN);
+			//TODO tady si vyřeš nějak ten scrooll ten puvodni jsem smazal listview je sam o sobe scrollovaci asi scrollTo metodu nejak udelat
         }
         
 	};
