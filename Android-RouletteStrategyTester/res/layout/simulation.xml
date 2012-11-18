@@ -81,29 +81,12 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent" >
 
-                <LinearLayout
-                    android:id="@+id/linearLayout1"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:paddingLeft="20px" >
-
+                <ListView
+                    android:id="@+id/loglist"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                </ListView>
                     
-		            <TableLayout
-		                android:id="@+id/tabulkaLog"
-		                android:layout_width="fill_parent"
-		                android:layout_height="wrap_content"
-		                android:layout_alignParentTop="true"
-		                android:layout_centerHorizontal="true" 
-		                android:stretchColumns="3" >
-		            </TableLayout>
-                    
-                    <!-- <TextView
-                        android:id="@+id/log"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in mauris libero. Fusce non leo velit. Maecenas pulvinar condimentum auctor. Nullam et neque in turpis aliquam pharetra sed at magna. Aenean quis rhoncus urna. Nam eget venenatis lorem. Quisque vehicula gravida convallis. Mauris vitae mauris libero. Vestibulum lorem mi, molestie eu tristique eu, blandit at tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam blandit magna in erat iaculis ut iaculis enim varius. Nullam a arcu sed metus elementum dapibus. Nam lacus velit, ornare quis luctus hendrerit, cursus porttitor mi. Quisque auctor posuere facilisis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;Suspendisse feugiat elit nec mauris rutrum id rutrum mauris congue. Nam ac felis eu lacus gravida porta. Sed augue velit, interdum quis mattis at, interdum at justo. Integer a risus tortor, in laoreet magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce eu nulla nibh. Sed laoreet metus eu justo dictum sed placerat sem tempus." />
--->
-                </LinearLayout>
             </ScrollView>
 	        
         </RelativeLayout>

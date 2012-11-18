@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import android.util.Log;
+
 import cz.speen.roulettetester.Simulation;
 
 public class S_Martingale extends Strategy {
@@ -37,6 +39,9 @@ public class S_Martingale extends Strategy {
 			sim.penizky -= rs.getVybranaRuleta().min_sazka;
 			sim.stav_hrani = "Bet "+rs.getVybranaRuleta().min_sazka;
 		}else{
+
+			Log.i("zacatek", l.get(0));
+			
 			String barva = getBarva(cislo);
 			if(barva.equals(l.get(1))){
 				//vyhr‡l! :)			-- nastavit opa‹nou barvu a nastavit minim‡ln’ s‡zku
@@ -54,6 +59,9 @@ public class S_Martingale extends Strategy {
 				sim.penizky -= sazka;
 			}
 		}
+
+		Log.i("konec", l.get(0));
+		
 		return l;
 	}
 	

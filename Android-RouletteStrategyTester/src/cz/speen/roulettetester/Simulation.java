@@ -1,6 +1,5 @@
 package cz.speen.roulettetester;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,10 +15,13 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager.LayoutParams;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import cz.speen.roulettetester.adps.SimulationLog;
+import cz.speen.roulettetester.adps.SimulationLogAdapter;
 import cz.speen.roulettetester.cls.Roulette;
 import cz.speen.roulettetester.cls.RouletteService;
 import cz.speen.roulettetester.cls.Strategy;
@@ -28,7 +30,7 @@ import cz.speen.roulettetester.cls.StrategyService;
 public class Simulation extends Activity implements Runnable {
 
 	private TextView tv_log, tv_nazev_strategie, tv_cas, tv_penizky;
-	private TableLayout tabulka_log;
+	private ListView tabulka_log;
 	private ScrollView scroll_view;
 	private boolean pauza = false;
 	private boolean hrajese = false;
@@ -57,12 +59,13 @@ public class Simulation extends Activity implements Runnable {
         tv_cas = (TextView) findViewById(R.id.cas);
         tv_penizky = (TextView) findViewById(R.id.penizky);
         tv_nazev_strategie = (TextView) findViewById(R.id.nazevStrategie);
-        tabulka_log = (TableLayout) findViewById(R.id.tabulkaLog);
+        tabulka_log = (ListView) findViewById(R.id.loglist);
         scroll_view = (ScrollView) findViewById(R.id.scrollView1);
         
         tv_nazev_strategie.setText(strategie.nazev);
         tv_cas.setText("00:00:00");
         tv_penizky.setText(""+penizky);
+        tabulka_log.setAdapter(new SimulationLogAdapter(new ArrayList<SimulationLog>(), this));
 	}
 
 	@Override
